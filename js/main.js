@@ -3,7 +3,7 @@ let logo = document.querySelector(".logo");
 let menu = document.querySelectorAll(".menu ul li");
 let container1_txt = document.querySelector(".container1 .txt");
 let container1_boxs = document.querySelector(".container1 .boxs");
-// let aboutPop = document.querySelector(".aboutPop");
+let aboutPop = document.querySelector(".aboutPop");
 
 
 // 윈도우가 다 로드된 후에 실행 -onload
@@ -20,8 +20,18 @@ window.onload = function(){
   function scrollEvent(e){
     let scroll= document.documentElement.scrollTop;
     let per = Math.ceil(scroll/(document.body.scrollHeight - window.innerHeight) * 100);
-    
+  
+    if(per>=20 ){
+      container1_txt.style.opacity="1";
+    }else{
+      container1_txt.style.opacity="0"
+    }
 
+    if(per>=30 ){
+      container1_boxs.style.opacity="1";
+    }else{
+      container1_boxs.style.opacity="0"
+    }
   }
 }
 
@@ -42,7 +52,8 @@ function onmouseover_event(e){
 
     le.addEventListener("mouseenter", e=>{
       let text = e.currentTarget.querySelector("p");
-      let aboutPop = document.querySelector(".aboutPop");
+      cursor.style.zIndex = "5";
+      // let aboutPop = document.querySelector(".aboutPop");
       
       aboutPop.classList.add("on");
       text.addEventListener("click", e=>{s
@@ -54,7 +65,19 @@ function onmouseover_event(e){
         }
       });
     });
-
-
   }
+}
+
+function popup(){
+  let closeA = document.querySelector(".aboutPop .title .closebtn");
+
+  closeA.addEventListener("click", e=>{
+    console.log("click!");
+    aboutPop.classList.remove("on");
+  },false);
+
+  closeA.addEventListener("mouseenter", e =>{
+    cursor.style.zIndex = "5";
+  });
+
 }
