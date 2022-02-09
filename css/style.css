@@ -182,10 +182,12 @@ header .inner figure video{
   display: block;
   transform: translateY(50px);
   padding-right: 50px;
+  color: #fff
 }
 
 .container2 article .inner .txt h2{
   padding-bottom: 50px;
+  
 }
 
 .container2 article .inner .txt p{
@@ -193,11 +195,21 @@ header .inner figure video{
 }
 
 .container2 article .inner .txt a{
-  width: 200px;
-  height: 100px;
+  display: block;
+  width: 130px;
+  height: 40px;
   border: 1.5px solid #fff;
   border-radius: 50px;
-  color: #fff
+  color: #fff;
+  text-align: center;
+  line-height:35px;
+  transition: 0.3s
+}
+
+.container2 article .inner .txt a:hover{
+  background-color: #fff;
+  color: seagreen;
+  transition: 0.3s ease-in-out;
 }
 
 .container2 article .inner figure img{
@@ -205,6 +217,14 @@ header .inner figure video{
   height:70vh;
   object-fit: cover;
 }
+
+/* container3 */
+.container3{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+
 
 /* about팝업 */
 .aboutPop{
