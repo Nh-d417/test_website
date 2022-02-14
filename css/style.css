@@ -174,7 +174,7 @@ header .inner figure video{
 }
 .container2 article .inner{
   display: flex;
-  margin: 10vw 45vh;
+  margin: 5vw 45vh;
 }
 
 .container2 article .inner .txt{
@@ -312,6 +312,7 @@ header .inner figure video{
   opacity: 0.5;
   z-index: 1000;
   transition: 0.18s ;
+  pointer-events:none
 }
 
 .cursor.on{
@@ -323,32 +324,19 @@ header .inner figure video{
   left: -1.5em;
   opacity: 1;
   border:1px dashed rgba(255, 255, 255, 0.8);
+  pointer-events:none;
 }
 
-@keyframes rotate{
-  0%{
-    transform: rotate(0deg);
-    opacity: 0.3;
-  }
-  30%{
-    transform: rotate(90deg);
-  }
-  50%{
-    transform: rotate(170deg);
-    opacity: 1;
-  }
-  100%{
-    transform: rotate(360deg);
-    opacity: 0.3;
-  }
-}
-
+/* 미디어타입 */
 @media screen and (max-width: 1099px) {
   header .inner figure video{
     height: 645px;
   }
+  .container2 article .inner{
+    display: flex;
+    margin: 5vw 20vh;
+  }
 }
-
 
 @media screen and (max-width: 769px) {
   .container1{
@@ -366,6 +354,37 @@ header .inner figure video{
   .container1 article .inner .boxs .contents:nth-of-type(odd){
     transform: translateY(0px) ;
   }
+
+  .container2{
+    height: 86vh;
+  }
+
+  .container2 article .inner{
+    align-items: center;
+  }
+
+  .container2 article .inner figure img{
+    width: 40vh;
+    height:60vh;
+    object-fit: cover;
+  }
+
+  .container2 article .inner .txt{
+    text-align: left;
+    display: block;
+    transform: none;
+    padding-right: 50px;
+    color: #fff
+  }
+  
+  .container2 article .inner .txt h2{
+    padding-bottom: 30px;
+    
+  }
+  
+  .container2 article .inner .txt p{
+    padding-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 544px) {
@@ -374,5 +393,38 @@ header .inner figure video{
   }
   .container1 article .inner .boxs .contents {
     margin-left:20vh;
+  }
+
+  .container2{
+    height: 86vh;
+  }
+
+  .container2 article .inner{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 18vw 5vh;
+    align-content: center;
+  }
+  
+  .container2 article .inner .txt{
+    text-align: center;
+    display: block;
+    color: #fff;
+    padding-right: 0px;
+  }
+  
+
+  .container2 article .inner .txt p{
+    display: none;
+  }
+  .container2 article .inner .txt a{
+    
+    /* left: 50%; */
+    transform: translateX(110%);
+  }
+  .container2 article .inner figure img{
+    width: 60vh;
+    height:40vh;
+    object-fit: cover;
   }
 }

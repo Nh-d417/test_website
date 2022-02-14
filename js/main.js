@@ -1,10 +1,10 @@
-let cursor = document.querySelector(".cursor");
-let logo = document.querySelector(".logo");
-let menu = document.querySelectorAll(".menu ul li");
-let container1_txt = document.querySelector(".container1 .txt");
-let container1_boxs = document.querySelector(".container1 .boxs");
-let aboutPop = document.querySelector(".aboutPop");
-
+const cursor = document.querySelector(".cursor");
+const logo = document.querySelector(".logo");
+const menu = document.querySelectorAll(".menu ul li");
+const container1_txt = document.querySelector(".container1 .txt");
+const container1_boxs = document.querySelector(".container1 .boxs");
+const aboutPop = document.querySelector(".aboutPop");
+const closeA = document.querySelector(".aboutPop .title .closebtn");
 
 // 윈도우가 다 로드된 후에 실행 -onload
 window.onload = function(){
@@ -36,48 +36,40 @@ window.onload = function(){
 }
 
 function onmouseover_event(e){
-  cursor.classList.add("on");
-  // logo.addEventListener("click", e=>{
-
-  // });
-  logo.addEventListener("mouseleave", e =>{
+  console.dir(e);
+  if (e.type ==="mouseleave"){
     cursor.classList.remove("on");
-  });
-
-  for (let le of menu) {
-      le.addEventListener("mouseleave", e =>{
-      cursor.classList.remove("on");
-    });
-
-
-    le.addEventListener("mouseenter", e=>{
-      let text = e.currentTarget.querySelector("p");
-      cursor.style.zIndex = "5";
-      // let aboutPop = document.querySelector(".aboutPop");
-      
-      aboutPop.classList.add("on");
-      text.addEventListener("click", e=>{s
-        if (text.innerText == "About") {
-          // aboutPop.classList.add("on");
-          //
-        }else{
-          console.log(text);
-        }
-      });
-    });
+  }else if(e.type ==="mouseenter"){
+    cursor.classList.add("on");
   }
+ 
+  //     aboutPop.classList.add("on");
+  //     text.addEventListener("click", e=>{s
+  //       if (text.innerText == "About") {
+  //         // aboutPop.classList.add("on");
+  //         //
+  //       }else{
+  //         console.log(text);
+  //       }
+  //     });
+  //   });
+  // }
 }
 
-function popup(){
-  let closeA = document.querySelector(".aboutPop .title .closebtn");
+logo.addEventListener("mouseenter", onmouseover_event);
+logo.addEventListener("mouseleave", onmouseover_event);
 
-  closeA.addEventListener("click", e=>{
-    console.log("click!");
-    aboutPop.classList.remove("on");
-  },false);
+ for (let le of menu) {
+  //  console.log(le);
+   le.addEventListener("mouseenter", onmouseover_event);
+   le.addEventListener("mouseleave", onmouseover_event);
+   le.addEventListener("click" , e =>{
+    aboutPop.classList.toggle("on");
+   })
+ }
 
-  closeA.addEventListener("mouseenter", e =>{
-    cursor.style.zIndex = "5";
-  });
+ closeA.addEventListener("click",  popupClosed);
 
+function popupClosed(){
+  aboutPop.classList.remove("on")
 }
