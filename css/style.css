@@ -169,12 +169,13 @@ header .inner figure video{
 }
 .container2 article{
   position: absolute;
-  height: inherit
-
+  height: 100%;
 }
 .container2 article .inner{
   display: flex;
-  margin: 5vw 45vh;
+  height: 100%;
+  align-items: center;
+  padding: 5vw 45vh;
 }
 
 .container2 article .inner .txt{
@@ -221,10 +222,75 @@ header .inner figure video{
 /* container3 */
 .container3{
   width: 100%;
-  height: 100vh;
-  background-color: black;
+  height: 120vh;
+  background-color: #fff;
 }
 
+.container3 article{
+  position: relative;
+  height: 100%;
+}
+
+.container3 article .inner{
+   text-align: center;
+   padding: 5vw 15vw;
+   height: 100%;
+}
+
+.container3 article .inner h2{
+  width: 40vh;
+  padding-bottom: 10px;
+  border-bottom:1.5px solid #666;
+  display: inline-block;
+}
+
+.container3 article .inner p{
+  margin: 10px auto 20px;
+  font: 10px normal "arial";
+}
+
+.container3 article .inner .workTag{
+  height: 30px;
+  display: inline-block;
+}
+
+.container3 article .inner .workTag li{
+  float: left;
+  margin: auto 5px ;
+}
+
+.container3 article .inner .workTag li a{
+  color: #333;
+}
+
+.container3 article .inner .workImg{
+  width: 65vw;
+  display: inline-block;
+}
+
+.container3 article .inner .workImg img{
+  width: 35vh;
+  height: 35vh;
+  object-fit: cover;
+}
+
+/* bottom */
+footer{
+  background-color: #333;
+  padding: 2vw 5vw ;
+}
+
+footer address{
+  color: #777;
+  font-size: small;
+  border-bottom: 1px #555 solid;
+}
+
+footer p{
+  color: #777;
+  margin-top: 20px;
+  font-size: small;
+}
 
 /* about팝업 */
 .aboutPop{
@@ -336,6 +402,19 @@ header .inner figure video{
     display: flex;
     margin: 5vw 20vh;
   }
+
+  .container3 article .inner .workImg img{
+    width: 30vh;
+    height: 30vh;
+  }
+}
+
+@media screen and (max-width: 873px) {
+ /* 임시 보류 : 요소 수 감소 */
+  .container3 {
+    height: 120vh;
+  }
+
 }
 
 @media screen and (max-width: 769px) {
